@@ -3,7 +3,7 @@ package com.zoo.fantastico.controller;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 import java.util.List;
 import com.zoo.fantastico.model.Zone;
 import com.zoo.fantastico.service.ZoneService;
