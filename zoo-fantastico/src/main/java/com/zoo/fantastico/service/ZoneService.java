@@ -27,8 +27,8 @@ public class ZoneService {
 
     public Zone updateZone(Long id, Zone data) {
         Zone z = getById(id);
-        z.setName(data.getName());
-        z.setDescription(data.getDescription());
+        if (data.getName() != null) z.setName(data.getName());
+        if (data.getDescription() != null) z.setDescription(data.getDescription());
         z.setCapacity(data.getCapacity());
         return repo.save(z);
     }

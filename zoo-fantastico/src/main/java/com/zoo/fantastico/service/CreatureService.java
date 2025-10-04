@@ -34,11 +34,12 @@ public class CreatureService {
 
     public Creature updateCreature(Long id, Creature data) {
         Creature c = getById(id);
-        c.setName(data.getName());
-        c.setSpecies(data.getSpecies());
+        // Usar setters manualmente
+        if (data.getName() != null) c.setName(data.getName());
+        if (data.getSpecies() != null) c.setSpecies(data.getSpecies());
         c.setSize(data.getSize());
         c.setDangerLevel(data.getDangerLevel());
-        c.setHealthStatus(data.getHealthStatus());
+        if (data.getHealthStatus() != null) c.setHealthStatus(data.getHealthStatus());
         c.setZone(data.getZone());
         return repo.save(c);
     }

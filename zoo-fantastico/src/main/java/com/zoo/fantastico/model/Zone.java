@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 @Data
@@ -30,5 +31,5 @@ public class Zone {
 
     @OneToMany(mappedBy = "zone", cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<Creature> creatures;
+    private List<Creature> creatures = new ArrayList<>();
 }
